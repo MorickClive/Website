@@ -1,0 +1,71 @@
+
+<script>
+function print(x){document.write(x + "<br>");}
+
+function makeVector2(x ,y){
+	this.x = x;
+	this.y = y;
+}
+function vector2EQUALS(v1,v2){
+	return (v1.x === v2.x && v1.y === v2.y);
+}
+
+function makeKnight(x,y){
+	 this.pos = new makeVector2(0,0);
+	 this.targ = new makeVector2(x,y);
+	 this.step = 0;
+	
+	// gettors
+	 this.getPos = function(){return "x: " + this.pos.x + ", y:" + this.pos.y;}
+
+	// Behaviours
+	 this.mvDir = function(x,y){
+			this.pos.x += x;
+			this.pos.y += y;
+	 }
+	 this.RUN = function() {
+			let endCondi = true;
+			let xDiff = 0;
+			let yDiff = 0;
+			
+			
+			while(endCondi){
+				xDiff = this.pos.x + Math.abs(this.targ.x);			
+				yDiff = this.pos.y + Math.abs(this.targ.y);
+				
+				// this situation only applies to the bottom right corner(will expand with time.)
+				// I need a way to adjust my vector backwards if needed.
+				// else all I will get is really really close if I limit it to a known test val.
+				if(xDiff > yDiff){
+					this.mvDir(2,-1);
+				}
+				else if(xDiff < yDiff){
+					this.mvDir(1,-2);
+				}
+				else{console.log("apparently we are within 1. ");
+					 console.log(this.getPos());
+					 }
+				
+				this.step++;
+				endCondi = this.step < 27 ? endCondi : !endCondi;
+				if(vector2EQUALS(this.pos, this.targ)){endCondi = !endCondi; }
+			}
+			console.log(this.getPos());
+			
+			// our application has ended
+			console.log("End Message");
+		}
+	}
+	
+	////
+	// main
+	////
+	print("Also runs in console per step.<br><br>");
+	
+	let knight = new makeKnight(15,-35);
+	
+	knight.RUN();
+	print("This knight is at: "+knight.getPos());
+	print("This knight is at: "+knight.getPos());
+	print("This knight took:  "+knight.step+" steps to get to the target.");
+</script>

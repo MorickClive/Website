@@ -388,6 +388,46 @@
 		myGarage.listVehicles();
 	}
 	
+	function createParagraph(targetID, nameAttr){
+		let para = document.createElement("p");
+		para.setAttribute("name", nameAttr);
+		let node = document.createTextNode(getText("form_paragraphText"));
+		para.appendChild(node);
+
+		let element = document.getElementById(targetID);
+		element.appendChild(para);
+	}
+	
+	function appendParagraph(targetName){
+		let val = document.getElementsByName(targetName)[0];
+		val.childNodes[0].nodeValue += getText("form_paragraphText");
+	}	
+	
+	function deleteParagraph(targetName){
+		let val = document.getElementsByName(targetName)[0];
+		if(val){val.parentNode.removeChild(val);}
+	}	
+
+	function  getText(textName){
+		return document.getElementsByName(textName)[0].value;
+	}
+	
+	function domInsert(){
+		let targetVal = "script_object";
+		let objectName = "custom_para";
+		let str = "This is my function value, passed in by a variable.";
+
+		let buttons = ["para_create", "para_append", "para_del"];
+		let strfunc = [ `createParagraph("${targetVal}", "${objectName}")`,
+						`appendParagraph("${objectName}")`,
+						`deleteParagraph("${objectName}")`]
+
+		document.getElementsByName(buttons[0])[0].setAttribute("onclick", strfunc[0]);
+		document.getElementsByName(buttons[1])[0].setAttribute("onclick", strfunc[1]);
+		document.getElementsByName(buttons[2])[0].setAttribute("onclick", strfunc[2]);
+	}
+	
+	
 	function intermediate(){
 		document.write("<b>Intermediate!</b>")	;	
 		nLine(2); // creates multiple doc new line prints
@@ -408,7 +448,12 @@
 		//			 return a value that represents the number of detected triples.
 		strings4();
 		// Task 17 - DOM 1
+		document.write(makeBold("See <u>Paragraph control form</u>"));
+		nLine(2);
+		domInsert();
+		
 		// Task 18 - JSON 1
+		//json1();
 		// Task 19 - JSON 2
 		
 		// Task 20 - Garage
