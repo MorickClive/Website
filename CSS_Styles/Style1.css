@@ -1,0 +1,70 @@
+		body{
+		}
+		
+		h3 {}
+		
+		.IMPORTANT {
+			color : black;
+		}
+		
+		.CODE {
+			color : blue;
+			font-weight : Bold;
+			text-decoration: underline;
+		}
+		
+		.tab {
+			padding-left : 1.8em;
+		}
+	
+		.tab1{
+			padding-left : 3.6em;
+		}
+		
+		.tab10%
+		{
+			padding-left : 50%;
+		}
+		
+		#background
+		{
+			background: radial-gradient(at top left,
+			#ccf2ff,
+			#666699);
+		}
+		
+		#border
+		{
+			border-style: solid;
+			border-width: 6px;
+			border-left-width: 3px;
+			border-right-width: 3px;
+			border-color: black;
+			
+		}
+		
+		#fullborder
+		{
+		    border-style: solid;
+			border-width: 3px;
+			border-left-width: 3px;
+			border-right-width: 3px;
+			border-color: black;
+			background: #d2e0f9;
+			
+			padding-left : 10px;
+			padding-right : 600px;
+			padding-top : 30px;
+			padding-bottom : 30px;
+		}
+		
+		#transparent50{
+			font-weight : bold;
+			color : rgba(255,0,0,0.5);
+		}
+		
+		header{
+			color : white;
+			background-image: url(https://morickitportfolio.files.wordpress.com/2016/11/cropped-background.jpg);
+			background-repeat: no-repeat;
+		}

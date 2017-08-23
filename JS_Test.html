@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+ 
+ <html>
+ 	<!--CSS -->
+	<link rel="stylesheet" href="CSS_Styles/style1.css">
+	
+	<!-- Javascript links-->
+	<script type="text/javascript" src ="Javascript/Browser_Funcs.js"></script>
+	<script type="text/javascript" src ="Javascript/Tasks.js"></script>
+	
+	<!--HTML -->
+	<header>
+		<title>Sample Site: Code</title>
+		
+		<h2>Main Page</h2>
+		<nav class = "tab">
+		<p><font color = white>Nav bar:</font></p>
+			<a href="Home.html"><input type="submit" value="Home" ></input></a> | 
+			<a href="Prj_List.html"><input type="submit" value="Project List"></input></a> | 
+			<a href="Abt_Me.html"><input type="submit" value="About Me"></input></a> | 
+			<a href="JS_Test.html"><input type="submit" value="Javascript"></input></a> 
+		</nav>
+		
+		<hr>
+	</header>
+	
+	<body id = "background">
+			<h3><u>Code Sections</u></h3>
+			<div class = "tab1">				
+					<h3>Description:</h3>
+					<p id = "fullborder" class = "tab1">
+						Below is a sample of Javascript that basically writes out values to the document as if it were the console.
+					</p>						
+				<br>
+
+				<!-- This section is the code section, it is important because it highlights coding capabilities on HTML via Javascript -->
+				<p class = "CODE">Coding Challenges:</p>
+					<div id = "fullborder">				
+						<script>
+							challenge();
+						</script>
+						<br>
+						<button onclick="alert(ultimateAnswer())">Ultimate Answer</button>
+						<button onclick="alert(ageUP(david))">Increase David's Age</button>
+					</div>
+					
+				<script>document.write("<br>" + david.name + " is " + david.age + ".(doesn't update)");</script>
+				<button onclick="alert(ageUP(david))">Increase David's Age</button>
+				
+				
+				<p class = "CODE">Basic Tasks:</p>
+					<div id = "fullborder">				
+						<script>
+							basic();
+						</script>
+
+						<!--  handles the creation of a new person -->
+						<p>Person creation form:</p>
+						<table class = "tab1">
+							<tr>
+								<td>Name:</td>
+								<td><input type="text" name="form_personName"></td>
+							</tr>
+							<tr>
+								<td>Age:</td>
+								<td><input type="text" name="form_personAge"></td>
+							</tr>
+							<tr>
+								<td>Occupation: </td>
+								<td><input type="text" name="form_personOccup"></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td><button onclick="alert(form_CreatePerson('form_personName', 'form_personAge', 'form_personOccup').printMe())">Create Person</button></td>
+							</tr>
+						</table>
+
+						<script>
+							basic2();
+						</script>
+					</div>
+					
+				<br>
+
+				<p class = "CODE">Intermediate Tasks:</p>
+					<div id = "fullborder">				
+						<script>
+							intermediate();
+						</script>
+					</div>	
+			</div>
+	</body>
+	<!-- -->
+	<footer>
+		<hr>
+		<p>This is the footer, it remains at the bottom of a page to give structure.</p>
+		<button onclick="UI_back()">Go Back</button>
+	</footer>
+</html>
