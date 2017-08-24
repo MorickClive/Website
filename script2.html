@@ -1,0 +1,65 @@
+
+<script>
+
+function print(x){console.log(x);}
+
+
+function makeWarden(path){
+	this.pos = 0;
+	this.gossip = 1;
+	this.path = path;
+	this.checked = false;
+	this.moveUp = function(){
+		this.pos++;
+		if(this.pos > this.path.length-1){ this.pos = 0;}
+	}
+	this.currStop = function(){return this.path[this.pos];}
+}
+
+function makeDriver(wardens){
+
+	this.wardens = wardens;
+	this.checkStop = function(){
+		for(let i =0; i < this.wardens.length; i++){
+			for(let j =0; j < this.wardens.length; j++){
+				if(wardens[i] === wardens[j]){
+					continue;
+				}
+				else{
+					//print("W1: "+ wardens[i].currStop() +", W2: "+ wardens[j].currStop());
+					if((wardens[i].currStop() === wardens[j].currStop()) && (wardens[i].checked == false && wardens[j].checked == false)){
+						
+						let addedGossips = wardens[i].gossip + wardens[j].gossip;
+						wardens[i].gossip = addedGossips;
+						wardens[j].gossip = addedGossips;
+						wardens[i].checked = true;
+						wardens[j].checked = true;
+
+						print("W1: "+ wardens[i].gossip +", W2: "+ wardens[j].gossip);
+					
+					}
+					else continue
+				}
+			}
+		}
+		for(let i =0; i < this.wardens.length; i++){
+			this.wardens[i].checked = false
+			this.wardens[i].moveUp();
+			print("warden #" + (i+1) +" gossip:"+ this.wardens[i].gossip);
+		}
+	}
+	
+}
+
+
+let path = [[3,1,2,3],[3,2,3,1],[4,2,3,4,5]];
+let wardens = [new makeWarden(path[0]),new makeWarden(path[1]),new makeWarden(path[2])];
+let main = new makeDriver(wardens);
+
+main.checkStop();
+main.checkStop();
+main.checkStop();
+main.checkStop();
+main.checkStop();
+
+</script>
