@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+ 
+ <html>
+	<!-- <link rel="icon" href="favicon.ico" type="image/x-icon"/> -->
+ 	<!--CSS -->
+	<link rel="stylesheet" href="CSS_Styles/Style2.css">
+	
+	<!--HTML -->
+	
+	<header>
+		<title>Hangman Game</title>
+		<script type="text/javascript" src ="JavaScript/hangman_script.js"></script>
+		<h2 class = "tab" style = "transform: translateY(100%);">
+		HangMan
+		</h2>
+			<br>		
+		<hr>
+	</header>
+	<body id = "background">	
+		<hr>
+			<p><h3>Hangman Image:</h3></p>
+			<hr>
+				<div id = "hangmanImage">
+				</div>
+			<hr>
+			<p><h4>Console Output:</h4></p>
+				<div id = "hangmanConsole">
+				</div>	
+		<hr>
+		
+		<p><b><u>Console Input:</u></b></p>
+			<table class = "tab1">
+			<tr>
+				<td>Enter a letter to guess:</td>
+				<td><input 	type="text"		id="Letter_Field"		onkeydown = "if (event.keyCode == 13)
+																				rtnLetter()">
+				</td>
+			</tr>
+			<tr>
+				<td><button onclick="rtnLetter()">Submit</button></td>
+				<td><i>(Any guesses that have more than one letter will be shortened to the first character.)</i></td>			
+			</tr>
+			</table>
+	</body>
+		<footer>
+		<hr>
+		<p>This is the footer, it remains at the bottom of a page to give structure.</p>
+		<button onclick="UI_back()">Go Back</button>
+	</footer>
+</html>
+
+<script>consoleAuto()</script>

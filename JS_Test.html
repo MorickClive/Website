@@ -18,7 +18,8 @@
 			<a href="Home.html"><input type="submit" value="Home" ></input></a> | 
 			<a href="Prj_List.html"><input type="submit" value="Project List"></input></a> | 
 			<a href="Abt_Me.html"><input type="submit" value="About Me"></input></a> | 
-			<a href="JS_Test.html"><input type="submit" value="Javascript"></input></a> 
+			<a href="JS_Test.html"><input type="submit" value="Javascript"></input></a> |
+			<a href="hangman.html"><input type="submit" value="Hangman"></input></a>
 		</nav>
 		
 		<hr>
@@ -43,9 +44,25 @@
 						<button onclick="alert(ultimateAnswer())">Ultimate Answer</button>
 						<button onclick="alert(ageUP(david))">Increase David's Age</button>
 					</div>
-					
-				<script>document.write("<br>" + david.name + " is " + david.age + ".(doesn't update)");</script>
-				<button onclick="alert(ageUP(david))">Increase David's Age</button>
+				
+				<div id = "fullborder">
+					<p>Paragraph control form:</p>
+					<table class = "tab1">
+						<tr>
+							<td>Text:</td>
+							<td><input type="text" name="form_paragraphText"></td>
+						</tr>
+						<tr>
+							<td><button name = "para_create">Create Paragraph</button></td>
+							<td><button name = "para_append">Append paragraph</button></td>
+						</tr>
+						<tr>
+							<td><button name = "para_del">Delete Paragraph</button></td>
+						</tr>
+					</table>
+					<div id = "script_object">
+					</div>					
+				</div>
 				
 				
 				<p class = "CODE">Basic Tasks:</p>
@@ -87,7 +104,57 @@
 						<script>
 							intermediate();
 						</script>
-					</div>	
+					
+					<hr>					
+					<p>Garage form:</p>
+						<table class = "tab1">
+						<tr>
+							<td>Model:</td>
+							<td><input type="text" name="form_GarageSystem.model"></td>
+						</tr>
+						<tr>
+							<td>Reg No:</td>
+							<td><input type="text" name="form_GarageSystem.reg"></td>
+						</tr>
+						<tr>
+							<td>Car Value:</td>
+							<td><input type="text" name="form_GarageSystem.val"></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td><input type="checkbox" name="form_GarageSystem.faults">    Has Faults</td>
+						</tr>
+						
+						<tr>
+							<td><button onclick="myGarage.checkCar_inForm('form_GarageSystem')">Create car</button></td>
+							<td><button onclick="myGarage.listVehicles_Form('GarageConsole')">List all Cars</button></td>
+						</tr>
+
+						
+						</table>
+						
+						<hr>
+					<p>Car handle form:</p>
+						<table class = "tab1">
+						<tr>
+							<td>Car Reg No:</td>
+							<td><input type="text" name="form_GarageSystem.regSearch"></td>
+						</tr>
+						<tr>
+							<td><button onclick="myGarage.listVehicle_Form('form_GarageSystem','GarageConsole')">Print Car Details</button></td>
+							<td><button onclick="myGarage.valCar_Form('form_GarageSystem','GarageConsole')">Print Car Value</button></td>
+						</tr>
+						<tr>
+							<td><button onclick="myGarage.delCar_Form('form_GarageSystem')">Delete Car</button></td>
+						</tr>
+						</table>
+						<hr>
+						<p><h3>Console Output:</h3></p>
+						<hr>
+						<div id = "GarageConsole">
+						</div>	
+						<hr>						
+					</div>
 			</div>
 	</body>
 	<!-- -->
