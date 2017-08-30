@@ -37,7 +37,7 @@
 		
 		console.log(letter);
 		
-		for(let x = 0; x < myHiddenWord.length; x++){
+		for(let x = 0; x < myGuessWord.length; x++){
 			//console.log(myGuessWord.charAt(x));
 			if(myGuessWord.charAt(x) ===  letter){
 				pos = x;
@@ -47,7 +47,7 @@
 		
 		if(pos !== -1){
 			//console.log(pos); // debug
-			for(let x = 0 ; x < myHiddenWord.length; x++){
+			for(let x = 0 ; x < myGuessWord.length; x++){
 				if(myGuessWord.charAt(x) === myGuessWord.charAt(pos)){
 					str += myGuessWord.charAt(x);
 				}
@@ -89,7 +89,7 @@
 	}
 	
 	function getWord(callback){
-		let requestURL = "https://raw.githubusercontent.com/dwyl/english-words/master/words_alpha.txt";
+		let requestURL = "https://raw.githubusercontent.com/dwyl/english-words/master/words.txt";
 		let randomWord = "";
 		
 		let xhttp = new XMLHttpRequest();
